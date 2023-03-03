@@ -34,4 +34,12 @@ public class Author {
                 && (surname == item.surname || (surname != null && surname.equals(item.getSurname())));
     }
 
+    @Override
+    public int hashCode(){
+        final int total = 31;
+        int result = 1;
+        result = total * result + ((name == null) ? 0 : name.hashCode());
+        result = total * result + ((surname == null) ? 0: surname.hashCode());
+        return result;
+    }
 }

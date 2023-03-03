@@ -49,4 +49,14 @@ public class Book {
                 (author == item.author || (author != null && author.equals(item.getAuthor())));
     }
 
+    @Override
+    public int hashCode(){
+        final int total = 31;
+        int result = 1;
+        result = total * result + ((name == null) ? 0 : name.hashCode());
+        result = total * result + publishDate;
+        result = total * result + ((author == null) ? 0 : author.hashCode());
+        return result;
+    }
+
 }
